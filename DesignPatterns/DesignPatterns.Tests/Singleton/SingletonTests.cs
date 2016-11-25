@@ -6,10 +6,10 @@ using System.Text;
 namespace DesignPatterns.Tests.Singleton
 {
     [TestClass]
-    class SingletonTests
+    public class SingletonTests
     {
         [TestMethod]
-        public void ShouldCreateOnlyOneInstance()
+        public void When_Calling_Instance_Should_Return_SameInstance()
         {
 
         }
