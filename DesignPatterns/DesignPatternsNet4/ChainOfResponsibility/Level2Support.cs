@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.ChainOfResponsibility
+﻿namespace DesignPatternsNet4.ChainOfResponsibility
 {
     internal class Level2Support : ISupportDesk
     {

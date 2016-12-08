@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Proxy
+﻿namespace DesignPatternsNet4.Proxy
 {
     internal class RealSubject : ISubject
     {
