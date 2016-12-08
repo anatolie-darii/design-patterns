@@ -2,12 +2,8 @@
 {
     public class Level2Support : ISupportDesk
     {
-        private readonly Level3Support nextLevel;
+        private readonly Level3Support nextLevel = new Level3Support();
 
-        public Level2Support(Level3Support nextLevel)
-        {
-            this.nextLevel = nextLevel;
-        }
         public string HandleIncident(int dificulty)
         {
             if (dificulty <= 2)

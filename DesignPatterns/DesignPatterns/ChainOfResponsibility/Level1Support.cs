@@ -2,12 +2,8 @@ namespace DesignPatterns.ChainOfResponsibility
 {
     public class Level1Support : ISupportDesk
     {
-        private readonly Level2Support nextLevel;
+        private readonly Level2Support nextLevel = new Level2Support();
 
-        public Level1Support(Level2Support nextLevel)
-        {
-            this.nextLevel = nextLevel;
-        }
         public string HandleIncident(int dificulty)
         {
             if (dificulty <= 1)
