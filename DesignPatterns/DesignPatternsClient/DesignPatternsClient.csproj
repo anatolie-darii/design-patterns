@@ -43,5 +43,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DesignPatternsNet4\DesignPatternsNet4.csproj">
+      <Project>{01e31a5a-1fb4-407c-bb2d-0f5fbc3e4414}</Project>
+      <Name>DesignPatternsNet4</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
