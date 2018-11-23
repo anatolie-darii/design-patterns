@@ -15,19 +15,43 @@ namespace DesignPatternsClient
         {
             Console.WriteLine("Hello there design patterns!");
 
-            //TestSingleton();
-            //TestProxy();
-            //TestChainOfResponsibility();
+            TestSingleton();
+            TestProxy();
+            TestChainOfResponsibility();
 
-            TestComposite();
-            TestDecorator();
-            TestFactory();
+            //TestComposite();
+            //TestDecorator();
+            //TestFactory();
 
             Console.ReadLine();
         }
 
+        private static void TestSingleton()
+        {
+            Console.WriteLine("Testing singleton...");
+            var instance1 = Singleton.Instance;
+            var instance2 = Singleton.Instance;
+            var singletonMessage = instance1 == instance2 ? "equal" : "not equal";
+            Console.WriteLine($"Singleton instances are {singletonMessage}");
+        }
+
+        private static void TestProxy()
+        {
+            Console.WriteLine("Testing proxy...");
+            var proxyResult = new Proxy().DoAction("Test action");
+            Console.WriteLine($"Message from proxy - {proxyResult}");
+        }
+
+        private static void TestChainOfResponsibility()
+        {
+            Console.WriteLine("Testing chain of responsibility...");
+            var handleIncidentResult = new Level1Support().HandleIncident(2);
+            Console.WriteLine($"Request - {handleIncidentResult}");
+        }
+
         private static void TestComposite()
         {
+            Console.WriteLine("Testing composite...");
             // Create a tree structure 
             var root =
                 new CompositeElement("Picture");
@@ -54,6 +78,7 @@ namespace DesignPatternsClient
 
         private static void TestDecorator()
         {
+            Console.WriteLine("Testing decorator...");
             // Create book
             var book = new Book("Worley", "Inside ASP.NET", 10);
             book.Display();
@@ -74,6 +99,7 @@ namespace DesignPatternsClient
 
         private static void TestFactory()
         {
+            Console.WriteLine("Testing factory...");
             // Create and run the African animal world
             ContinentFactory africa = new AfricaFactory();
             var world = new AnimalWorld(africa);
@@ -83,29 +109,6 @@ namespace DesignPatternsClient
             ContinentFactory america = new AmericaFactory();
             world = new AnimalWorld(america);
             world.RunFoodChain();
-        }
-
-        private static void TestSingleton()
-        {
-            Console.Write("Testing singleton...");
-            var instance1 = Singleton.Instance;
-            var instance2 = Singleton.Instance;
-            var singletonMessage = instance1 == instance2 ? "equal" : "not equal";
-            Console.WriteLine($"Singleton instances are {singletonMessage}");
-        }
-
-        private static void TestProxy()
-        {
-            Console.WriteLine("Testing proxy");
-            var proxyResult = new Proxy().DoAction("Test action");
-            Console.WriteLine($"Message from proxy - {proxyResult}");
-        }
-
-        private static void TestChainOfResponsibility()
-        {
-            Console.WriteLine("Testing chain of responsibility");
-            var handleIncidentResult = new Level1Support().HandleIncident(2);
-            Console.WriteLine($"Request - {handleIncidentResult}");
         }
     }
 }
